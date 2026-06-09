@@ -1,4 +1,4 @@
-# A Falsificationist Research Pipeline for Crypto Microstructure Using Gemini for Hypothesis Generation
+# Falsificationist Research Pipeline for Crypto Microstructure Using Gemini for Hypothesis Generation
 
 Hypothesis generation is delegated to an LLM (Gemini), which reads pipeline outputs (AUC distribution, feature importance, regime diagnostics) and proposes causal hypotheses with explicit falsification criteria. Each hypothesis is SHA-256 checksummed before any causal test runs, preventing post-hoc reformulation. DoWhy, Robinson, and HAC-OLS test independently. Hypotheses are data-informed but cannot be selectively withheld or modified after seeing test results. 
 
@@ -143,19 +143,10 @@ This is an experiment to take myself out of the pipeline, with my biases.
 
 **Falsificationist framing.** Supported means *not yet falsified*, not proven. This follows Popper's criterion as applied in López de Prado & Zoonekynd (2025). The pipeline is designed to reject strategies, not to rationalize them.
 
-**LLM as hypothesis engine.** Gemini runs as an autonomous analyst between iterations, reading the current pipeline output and proposing the next hypothesis with a mechanistic causal chain. This separates idea generation from testing. The hypothesis engine receives summaries of previously supported hypotheses, biasing the hypothesis space toward confirmed signals. A stricter design would blind the generator to prior verdicts. Causal verdicts generate concrete parameter recommendations via a second Gemini call. Implementation remains at researcher discretion.
+**LLM as hypothesis engine.** Gemini runs as an autonomous analyst between iterations, reading the current pipeline output and proposing the next hypothesis with a mechanistic causal chain. This separates idea generation from testing. The hypothesis engine receives summaries of previously supported hypotheses, biasing the hypothesis space toward confirmed signals. Causal verdicts generate concrete parameter recommendations via a second Gemini call. Implementation remains at researcher discretion.
 
 **Exploration vs. confirmation.** The Gemini-causal loop runs on training data and produces exploratory findings. The held-out set is reserved exclusively for confirmation. These two stages are never mixed.
 
----
-
-## What This Pipeline Prevents
-
-**Sampling bias.** Time-sampled bars oversample quiet periods and undersample volatile ones. Dollar bars represent a fixed amount of traded dollar volume, producing observations with more uniform statistical properties.
-
-**Lookahead bias.** A standard train/test split on sequential data leaks future information into training. CPCV uses 10 groups, 44 test folds, with purging and a 20-bar embargo at every boundary.
-
-**Hypothesis mining.** Generating hypotheses after seeing results is p-hacking. Every hypothesis is pre-registered with a SHA-256 checksum before any model runs, tested against the pre-stated falsification criterion, not optimized to pass it.
 
 ---
 

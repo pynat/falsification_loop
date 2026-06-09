@@ -1,0 +1,26 @@
+# output
+results/
+results.json
+
+# python
+__pycache__/
+*.pyc
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# environments
+.env
+.venv
+env/
+venv/
+
+# os
+.DS_Store
+Thumbs.db
+
+# ide
+.vscode/
+.idea/

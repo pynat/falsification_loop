@@ -152,16 +152,12 @@ This is an experiment to take myself out of the pipeline, with my biases.
 
 ## Limitations
 
-Results are hypothesis-generating, not validated trading signals.
-
-- CPCV folds are not fully independent: consecutive folds share training data. Group comparisons are directional, not conclusive.
-- Kelly simulation uses symmetric triple-barrier outcomes. Real returns have fat tails not captured here.
-- Slippage estimate (3 bps) is approximate. Live cost drag at small capital sizes consumes a meaningful fraction of gross edge.
-- All hyperparameters were selected on historical data. The pipeline as a whole is implicitly optimized on the full period.
-- Causal hypotheses are tested on training data. Treat them as exploratory findings.
-- The held-out period (6 months, 839 bars) is too short for definitive conclusions.
-- The regime sub-group finding (n=8 edge folds) should be treated as a hypothesis, not a result.
-- The hypothesis engine receives summaries of previously supported hypotheses, biasing the hypothesis space toward confirmed signals.
+- Results are hypothesis-generating, not validated trading signals
+- CPCV folds are not fully independent: consecutive folds share training data. Group comparisons are directional, not conclusive
+- Slippage estimate (3 bps) is approximate
+- Causal hypotheses are tested on training data. Treat them as exploratory findings
+- The held-out period is short for definitive conclusions
+- The hypothesis engine receives summaries of previously supported hypotheses, biasing the hypothesis space toward confirmed signals
 
 ---
 
@@ -170,7 +166,7 @@ Results are hypothesis-generating, not validated trading signals.
 | Component | Technology |
 |---|---|
 | Data | Exchange API via `ccxt`, 6 years OHLCV |
-| Validation | Combinatorial Purged CV (López de Prado ch. 12) |
+| Validation | Combinatorial Purged CV |
 | Model | `lightgbm` |
 | Hyperparameter search | `Optuna` |
 | Sizing | Fractional Kelly (25%, 50%) |

@@ -14,14 +14,14 @@ Independent causal test
 ```
 
 
-### Example: Causal Hypothesis Falsification
+     
 
-*Pipeline output for a pre-registered hypothesis*
+*Example pipeline output for a pre-registered hypothesis*
 
 ![Causal validation](docs/causal_validation.png)
 
 H2 was falsified: ATE negative across all three estimators (DoWhy,
-Robinson partial linear, HAC OLS), placebo refutation passing.
+Robinson partial linear, HAC OLS).
 
 ---
 

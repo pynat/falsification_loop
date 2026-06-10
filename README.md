@@ -63,7 +63,7 @@ Causal validation  (DoWhy backdoor + Robinson partial linear + HAC OLS)
 
 ## Sizing Analysis
 
-Fractional Kelly sizing, cumulative PnL rises monotonically under both Kelly fractions, with max drawdown remaining below 3 f-units. The probability distribution (median across folds) confirms the model produces calibrated continuous signals, not degenerate 0/1 outputs.
+Fractional Kelly sizing, cumulative PnL rises monotonically under both Kelly fractions, drawdown contained within expected Kelly bounds. The probability distribution (median across folds) confirms the model produces calibrated continuous signals, not degenerate 0/1 outputs.
 
 ![Sizing analysis](docs/sizing_plots.png)
 

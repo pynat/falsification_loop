@@ -194,7 +194,6 @@ falsification_loop/
 ├── held_out.py           # final validation on never-touched data partition
 ├── portfolio_summary.py  # narrative research log from full pipeline history
 ├── requirements.txt
-├── .env.example          # api key template
 └── docs/                 # output plots
 ```
 
@@ -218,7 +217,7 @@ brew install ta-lib
 sudo apt-get install libta-lib-dev
 ```
 
-Copy `.env.example` to `.env` and add your key:
+Create `.env` and add your key:
 
 ```
 GEMINI_API_KEY=your_key_here
@@ -226,7 +225,7 @@ GEMINI_API_KEY=your_key_here
 
 Free Gemini keys at https://aistudio.google.com (1500 req/day free tier).
 
-Configure `config.py` before running: set `SYMBOL`, `FEATURES`, `DOLLAR_VOL_THRESHOLD`, and `MIN_PROB`.
+Configure `config.py` before running: set `SYMBOL`, `FEATURES`, `DOLLAR_VOL_THRESHOLD`, and `MIN_PROB`, etc..
 
 ```bash
 python main.py
